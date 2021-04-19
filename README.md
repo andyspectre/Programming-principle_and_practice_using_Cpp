@@ -1,4 +1,4 @@
-# Programming-principle-and-practice-using-C-++
+# Programming: principle and practice using C++
 My solutions to many exercises of the book: Programming principles and practice using C++ by Bjarne Stroustrup. Each exercise is done using almost only the techniques explained in the corresponding chapters. Some exercise solutions are provided by the author. In such cases I won't upload mine, or if I do, they will be very similar to the author's.
 
 Please visit [Bjarne Stroustrup's website](https://www.stroustrup.com/ "Bjarne Stroustrup's Homepage") where you can find many interesting things like interviews, videos, and many info about C++, including the solutions to some exercise.
