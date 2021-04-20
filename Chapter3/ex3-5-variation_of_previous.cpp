@@ -1,5 +1,8 @@
-// Andrea Cocco 2020
-// Chapter 3 Exercise 5
+// Andrea Cocco 2020 
+// Chapter 3 exercise 5 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
 
 /*
  *      Modify the program above to ask the user to enter a floating-point values
@@ -54,5 +57,3 @@ int main()
                 std::cout <<"\nRatio: " << ratio << '\n';
         }
 }
-
-        
