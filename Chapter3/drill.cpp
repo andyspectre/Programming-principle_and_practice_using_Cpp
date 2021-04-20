@@ -1,6 +1,5 @@
 // Andrea Cocco 2020 
 // Chapter 3 Drill from the book:
-//
 // Programming: principles and practice using C++, 2nd edition
 // by Bjarne Stroustrup
 // https://www.stroustrup.com/programming.html
