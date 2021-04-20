@@ -1,13 +1,18 @@
-//Andrea Cocco 2020
-//Chapter 4 Exercise 5
+// Andrea Cocco 2020 
+// Chapter 4 exercise 5 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
 /*
- *      Write a program that performs as a very simple calculator. Your calculator
- *      should be able to handle the four basic math operations -add, subtract, 
- *      multiply, divide - on two input values. Your program should prompt the user to
- *      enter three arguments: two double values and a character to represent an operation.
- *      If the entry arguments are 35.6, 24.1, and '+', the program output should be 
- *      "The sum of 35.6 and 24.1 is 59.7." In chapter 6 we look at a much more sophisticated
- *      simple calculator.
+ *      Write a program that performs as a very simple calculator. 
+ *      Your calculator should be able to handle the four basic 
+ *      math operations - add, subtract, multiply, divide - on two input values. 
+ *      Your program should prompt the user to enter three arguments: 
+ *      two double values and a character to represent an operation.
+ *      If the entry arguments are 35.6, 24.1, and '+', the program output 
+ *      should be "The sum of 35.6 and 24.1 is 59.7." 
+ *      In chapter 6 we look at a much more sophisticated simple calculator.
 */
 
 #include<iostream>
@@ -18,7 +23,8 @@ int main()
         double b = 0;
         char op = ' ';
 
-        std::cout << "Enter two numbers separated by an operator [+, -, *, /].\n";
+        std::cout << "Enter two numbers separated by an operator" 
+                << " [+, -, *, /].\n";
 
         while (std::cin >> a >> op >> b) {
                 double result = 0;
@@ -49,7 +55,8 @@ int main()
                         std::cout << "Bad operator\n";
                         break;
                 }
-                std::cout << operation << a << " and " << b << " is " << result << '\n';
+                std::cout << operation << a << " and " << b 
+                        << " is " << result << '\n';
                 std::cout << "Try again\n";
         }       
 }       
