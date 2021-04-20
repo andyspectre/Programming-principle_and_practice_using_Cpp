@@ -1,3 +1,16 @@
+// Andrea Cocco 2020 
+// Chapter 4 exercise 3 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
+/*
+        A program that prompts the user to enter some values 
+        (maybe the distance between two cities) and print smallest and
+        greatest distance, total distance (the sum of all distances) 
+        and mean distance.
+*/
+
 #include<iostream>
 #include<vector>
 
