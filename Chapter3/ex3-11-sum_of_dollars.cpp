@@ -1,5 +1,8 @@
-// Andrea Cocco 2020
-// Chapter 3 Exercise 11
+// Andrea Cocco 2020 
+// Chapter 3 exercise 11 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
 
 /*
  *      Write a program that prompts the user to enter some number of 
