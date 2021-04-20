@@ -1,5 +1,9 @@
-// Andrea Cocco 2020
-// Chapter 3 Exercise 1
+// Andrea Cocco 2020 
+// Chapter 3 exercise 1 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
 /*
         Do the "Try this" exercises from this chapter.
         Try this 1: Write out the age in months: read the input in years and multiply by 12
