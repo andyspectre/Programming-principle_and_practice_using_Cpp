@@ -6,16 +6,16 @@
 // https://www.stroustrup.com/programming.html
 
 /*
-	If you want to use the header file std_lib_facilities.h
-	just #include it at the beginning of the program
-	and that is the only header you'll need up until chapter 8
-	If you use that header also you don't need the notation "std::"
+        If you want to use the header file std_lib_facilities.h
+        just #include it at the beginning of the program
+        and that is the only header you'll need up until chapter 8
+        If you use that header also you don't need the notation "std::"
 */
 
 #include<iostream>
 
 int main()
 {
-	std::cout << "Hello, World!\n";
-	return 0;
+        std::cout << "Hello, World!\n";
+        return 0;
 }
