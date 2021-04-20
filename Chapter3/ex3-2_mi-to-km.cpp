@@ -1,5 +1,8 @@
-// Andrea Cocco 2020
-// Chapter 3 Exercise 2
+// Andrea Cocco 2020 
+// Chapter 3 exercise 2 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
 
 /*
         Write a program that converts from miles to kilometers.
