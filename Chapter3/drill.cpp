@@ -14,7 +14,7 @@ int main()
 	std::cout << "Enter the name of another friend (followed by 'enter'):\n";
 	std::cin >> friend_name;
 	std::cout << "Is this friend male or female? (type m/f followed by 'enter'):\n";
-	std::cin >> friend_sex;
+        std::cin >> friend_sex;
 
 	std::cout << "Dear " << first_name << ",\n\tHow are you? Here everything is ok, I miss you so much.\n";
 	std::cout << "\tI hear you just had a birthday and you are " << age << " years old.\n";
