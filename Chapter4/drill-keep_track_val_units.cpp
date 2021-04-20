@@ -1,3 +1,19 @@
+// Andrea Cocco 2020 
+// Chapter 4 drill from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
+/*
+        The drill consists of many steps. This is the final version.
+        The program prompts the user to enter value/unit pairs and keep
+        track of them. The units are: meters, centimeters, inches, feet.
+        At the end it converts everything to meters and prints the number
+        of value/unit pairs that have been entered, largest and smallest value, 
+        and the sum. It will also print all the values from
+        smallest to largest in an ordered list.
+*/
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
