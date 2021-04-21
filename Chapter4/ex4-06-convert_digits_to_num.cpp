@@ -1,3 +1,17 @@
+// Andrea Cocco 2020 
+// Chapter 4 exercise 6 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
+/*
+        Write a program that converts a digit to its corresponding
+        spelled-out value; e.g., the input 7 gives the output seven.
+        Have the same program,  using the same input loop, convert
+        spelled-out numbers into their digit form; e.g., the input
+        seven gives the output 7.
+*/
+
 #include<iostream>
 #include<vector>
 
@@ -5,6 +19,7 @@ std::vector<std::string> values = {"zero", "one", "two",
         "three", "four", "five", "six", "seven", "eight", "nine"};
 
 std::string spelled(int digit)
+        // Convert a digit to its corresponding spelled-out value
 {
         if (0<=digit && digit<=9) {
                 return values[digit];
@@ -15,6 +30,7 @@ std::string spelled(int digit)
 }
 
 int digit(std::string spelled)
+        // Convert spelled-out numbers into their digit form
 {
         for (int i=0; i<values.size(); ++i) {
                 if (spelled == values[i]) {
