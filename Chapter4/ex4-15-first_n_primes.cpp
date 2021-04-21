@@ -1,3 +1,14 @@
+// Andrea Cocco 2020 
+// Chapter 4 exercise 15 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
+/*
+        Write a program that takes an input value n 
+        and then finds the first n primes.
+*/
+
 #include<iostream>
 #include<vector>
 #include<cmath>
