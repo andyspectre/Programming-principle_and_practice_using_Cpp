@@ -1,5 +1,9 @@
-//Andrea Cocco 2021
-//Chapter 4 exercise 9
+// Andrea Cocco 2020 
+// Chapter 4 exercise 9 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
 /*
         Try to calculate the number of rice grains that the inventor asked for in exercise 8 above. 
         You’ll find that the number is so large that it won’t fit in an int or a double. 
