@@ -1,5 +1,9 @@
-//Andrea Cocco 2020
-//Chapter 4 Exercise 7
+// Andrea Cocco 2020 
+// Chapter 4 exercise 7 from the book:
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
 /*
         Modify the "mini calculator" from exercise 5 to accept 
         (just) single-digit numbers written as either digits or spelled out.
