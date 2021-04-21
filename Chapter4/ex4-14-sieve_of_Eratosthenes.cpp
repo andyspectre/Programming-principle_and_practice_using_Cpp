@@ -26,8 +26,8 @@ void sieve(int n)
         for (int i = 2; i <= n; ++i) {
                 if (is_prime[i]) {
                         std::cout << i << " ";
-                        // make every composite number false, starting from 
-                        // the square of every true number
+                        // make every multiple of a prime number false, 
+                        // starting from the square of that number.
                         for (int k = i*i; k <= n; k += i) {
                                 is_prime[k] = false;
                         }
