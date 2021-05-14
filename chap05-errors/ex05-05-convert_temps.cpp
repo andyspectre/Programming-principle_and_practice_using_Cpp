@@ -43,21 +43,33 @@ double ctok(double v, char u)
 
 int main()
 try {
-        std::cout << "Insert temperature value in Celsius [C]"
-        << " or Kelvin [K]: ";
 
         double v = 0;
         double convert_temps = 0;
         char u = ' ';
+        char converted = ' ';
 
-        std::cin >> v >> u; 
-        if (!std::cin) {
-                error("Invalid input");
-        }
-        else {
-                convert_temps = ctok(v, u);
+        while (true) { 
+        std::cout << "Insert temperature value in Celsius [C]"
+        << " or Kelvin [K]: ";
+                std::cin >> v >> u;
+
+                if (!std::cin) {
+                        error("Invalid input");  
+                }
+                else {
+                        convert_temps = ctok(v, u);
+                } 
+                if (u == 'k' || u == 'K') {
+                        converted = 'C';
+                }
+                else {
+                        converted = 'K';
+                }
+
                 std::cout << v << " degrees " << u 
-                        << " are " << convert_temps << '\n';
+                << " are " << convert_temps << " " 
+                << converted << '\n';
         }
         return 0;
 }
