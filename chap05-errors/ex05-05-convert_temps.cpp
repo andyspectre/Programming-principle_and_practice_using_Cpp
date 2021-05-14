@@ -5,7 +5,7 @@
 // https://www.stroustrup.com/programming.html
 
 /*
- *      Add to the program (n.03) so that it can also convert from 
+ *      Add to the program (n.04) so that it can also convert from 
  *      Kelvin to Celsius.
 */
 
