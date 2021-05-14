@@ -1,19 +1,16 @@
 // Andrea Cocco 2020 
-// Chapter 5 exercise 03 from the book:
+// Chapter 5 exercise 04 from the book:
 // Programming: principles and practice using C++, 2nd edition
 // by Bjarne Stroustrup
 // https://www.stroustrup.com/programming.html
 
 /*
- *      Absolute zero is the lowest temperature that can be reached; 
- *      it is -273.15°C, or 0 K. The above program, even when corrected, 
- *      will produce erroneous results when given a temperature below this. 
- *      Place a check in the main program that will produce an error if a 
- *      temperature is given below -273.15°C.
+ *      The following program takes in a temperature value in Celsius and 
+ *      converts it to Kelvin. There is a check in ctok that will produce 
+ *      an error if a temperature is given below absolute zero.
 */
 
 #include<iostream>
-
 
 void error(std::string s)
 {
