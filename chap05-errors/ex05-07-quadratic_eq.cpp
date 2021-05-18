@@ -24,34 +24,59 @@ void error(std::string s)
 
 double quadratic_eq(double a, double b, double c)
 {
-        if (a == 0 || b == 0 || c == 0) {
-                error("Not a quadratic equation");
-        }
+        double result = 0;
 
-        double delta = 0;
-        delta = pow(b, 2)-4*(a*c);
-
-        if (delta < 0) {
-                error("The equation does not have real roots");
+        if (a == 0) {        // not quadratic, only one result
+                result = -(c/b);
+                return result;
         }
-        return delta;
+        else if (b == 0) {        // incomplete quadratic equation 
+                result = -(c/a);
+                if (result > 0) {        // results should be + and - 
+                        result = sqrt(result);
+                }
+                else {
+                        error("Impossible negative square");
+                }
+                return result;
+        }
+        else if (c == 0) {        // incomplete quadratic equation
+                result = -(b/a);        // the other result should be 0
+                return result;
+        }
+        else {        // here I only calculate the Delta
+                double delta = 0;
+                delta = (b*b)-4*(a*c);
+
+                if (delta < 0) {
+                        error("The equation does not have real roots");
+                }
+                return delta;
+        }
 }
 
 int main()
+/*
+        This program can be refactored and modified to get both the 
+        results of a quadratic equation. Here I only get one result 
+        from incomplete quadratic equations and the delta from the 
+        complete ones. The easyest way probably would be to change 
+        the double function to a void function.
+*/
 try {
         double a = 0;
         double b = 0;
         double c = 0;
-        double result = 0;
+        double x = 0;
         std::cout << "Insert a, b, c" << '\n';
         std::cin >> a >> b >> c;
         if (!std::cin) {
                 error("Someting went bad with the read");
         }
         else {
-                result = quadratic_eq(a, b, c);
+                x = quadratic_eq(a, b, c);
         }
-        std::cout << result << '\n';
+        std::cout << x << '\n';
 }
 catch (std::runtime_error& e) {
         std::cerr << "runtime error: " << e.what() << '\n';
