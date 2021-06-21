@@ -51,6 +51,15 @@ void error(std::string s)
         throw std::runtime_error(s);
 }
 
+void Token_stream::put_back(Token t)
+{
+        if (full) {
+                error("Buffer already full");
+        }
+        full = true;
+        buffer = t;
+}
+
 Token Token_stream::get()
 {
         if (full) {
@@ -82,15 +91,24 @@ Token Token_stream::get()
 Token_stream ts;       
 // Token t = ts.get();
 
+double expression()
+{
+        
+}
+
 int main()
 {
         double val = 0;
         std::cout << "Expression: ";
         Token t = ts.get(); 
-        if (t.kind != '8') {
-                std::cout << t.kind << '\n';
-        }
-        else {
-                std::cout << t.value << '\n';
-        }
+        // if (t.kind != '8') {
+        //         std::cout << t.kind << '\n';
+        // }
+        // else {
+        //         std::cout << t.value << '\n';
+        // }
+        t = ts.putback();
+        val = expression();
+        std::cout << val << '\n';
+        
 }
