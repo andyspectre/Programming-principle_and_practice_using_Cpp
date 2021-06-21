@@ -91,25 +91,31 @@ Token Token_stream::get()
 Token_stream ts;       
 // Token t = ts.get();
 
-double expression()
+double primary()
 {
         Token t = ts.get();
-        return t.value;
+        switch (t.kind) {
+        case '8':
+                return t.value;
+        default:
+                error("primary expected");
+                return 1;
+        }
 }
 
 int main()
 {
         double val = 0;
         std::cout << "Expression: ";
-        Token t = ts.get(); 
+        // Token t = ts.get(); 
         // if (t.kind != '8') {
         //         std::cout << t.kind << '\n';
         // }
         // else {
         //         std::cout << t.value << '\n';
         // }
-        ts.putback(t);
-        val = expression();
+        // ts.putback(t);
+        val = primary();
         std::cout << val << '\n';
         
 }
