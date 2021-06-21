@@ -10,8 +10,9 @@
  *      It accepts addition, subtraction, multiplication, division and 
  *      parenthesis for grouping.
  *
- *      Grammar defining the syntax of the input. Tokens are in double quotes.
- *      Alternatives are put on separate lines:
+ *      Below is the grammar defining the syntax of the input. 
+ *      Tokens are in double quotes.
+ *      Alternatives are on separate lines:
  *
  *      Expression:
  *           Term
@@ -45,3 +46,51 @@ private:
         Token buffer;        // here is where we keep a Token using putback()
 };
 
+void error(std::string s)
+{
+        throw std::runtime_error(s);
+}
+
+Token Token_stream::get()
+{
+        if (full) {
+                full = false;
+                return buffer;
+        }
+        char ch;
+        std::cin >> ch;
+
+        switch (ch) {
+        case 'p':       // for print 
+        case 'q':       // for quit
+        case '(': case ')': case '+': case '-': case '*': case '/':
+                return Token{ch};
+        case '.':
+        case '0': case '1': case '2': case '3': case '4': case '5':
+        case '6': case '7': case '8': case '9':
+        {        std::cin.putback(ch);        // put digit back into input stream
+                 double val;
+                 std::cin >> val;
+                 return Token{'8',val};
+        }
+        default:
+                error("Bad Token");
+                return Token{'e',1};
+        }
+}
+
+Token_stream ts;       
+// Token t = ts.get();
+
+int main()
+{
+        double val = 0;
+        std::cout << "Expression: ";
+        Token t = ts.get(); 
+        if (t.kind != '8') {
+                std::cout << t.kind << '\n';
+        }
+        else {
+                std::cout << t.value << '\n';
+        }
+}
