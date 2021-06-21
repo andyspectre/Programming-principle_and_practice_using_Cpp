@@ -104,18 +104,15 @@ double primary()
 }
 
 int main()
-{
+try{
         double val = 0;
         std::cout << "Expression: ";
-        // Token t = ts.get(); 
-        // if (t.kind != '8') {
-        //         std::cout << t.kind << '\n';
-        // }
-        // else {
-        //         std::cout << t.value << '\n';
-        // }
-        // ts.putback(t);
         val = primary();
         std::cout << val << '\n';
-        
+        return 0;
+}
+
+catch (std::runtime_error& e) {
+        std::cerr << "runtime error: " << e.what() << '\n';
+        return 1;
 }
