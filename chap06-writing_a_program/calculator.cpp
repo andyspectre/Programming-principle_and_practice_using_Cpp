@@ -51,7 +51,7 @@ void error(std::string s)
         throw std::runtime_error(s);
 }
 
-void Token_stream::put_back(Token t)
+void Token_stream::putback(Token t)
 {
         if (full) {
                 error("Buffer already full");
@@ -93,7 +93,8 @@ Token_stream ts;
 
 double expression()
 {
-        
+        Token t = ts.get();
+        return t.value;
 }
 
 int main()
@@ -107,7 +108,7 @@ int main()
         // else {
         //         std::cout << t.value << '\n';
         // }
-        t = ts.putback();
+        ts.putback(t);
         val = expression();
         std::cout << val << '\n';
         
