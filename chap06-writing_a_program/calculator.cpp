@@ -107,12 +107,24 @@ double primary()
 
 double term()
 {
-        return primary();
+        double x =  primary();
+        return x;
 }
 
 double expression()
 {
-        return term();
+        double x = term();
+        Token t = ts.get();
+        switch (t.kind) {
+        case '+':
+                x += term();
+                return x;
+        case '-':
+                x -= term();
+                return x;
+        default:
+                return x;
+        }
 }
 
 
