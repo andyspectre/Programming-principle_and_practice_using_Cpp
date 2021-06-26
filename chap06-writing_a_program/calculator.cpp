@@ -97,17 +97,30 @@ double primary()
         switch (t.kind) {
         case '8':
                 return t.value;
+        case '(':
+                
         default:
                 error("primary expected");
                 return 1;
         }
 }
 
+double term()
+{
+        return primary();
+}
+
+double expression()
+{
+        return term();
+}
+
+
 int main()
 try{
         double val = 0;
         std::cout << "Expression: ";
-        val = primary();
+        val = expression();
         std::cout << val << '\n';
         return 0;
 }
