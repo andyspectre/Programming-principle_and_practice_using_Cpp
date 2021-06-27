@@ -91,14 +91,23 @@ Token Token_stream::get()
 Token_stream ts;       
 // Token t = ts.get();
 
+double expression();
+
 double primary()
 {
         Token t = ts.get();
         switch (t.kind) {
         case '8':
                 return t.value;
-        case '(':
-                
+        case '(':        // handle '(' Expression ')'
+        {
+                double x = expression();
+                t = ts.get();
+                if (t.kind != ')') {
+                        error("expected a closing braket");
+                }
+                return x;
+        }
         default:
                 error("primary expected");
                 return 1;
@@ -113,12 +122,12 @@ double term()
         while (true) {
                 switch (t.kind) {
                 case '*':
-                        x *= primary();
+                        x *= primary();        // handle Term '*' Primary
                         t = ts.get();
                         break;
                 case '/':
                 {
-                        double d = primary();
+                        double d = primary();    // handle Term '/' Primary
                         if (d == 0) {
                                 error("divide by zero");
                         }
@@ -141,11 +150,11 @@ double expression()
 
         while (true) {
                 switch (t.kind) {
-                case '+':
+                case '+':        // handle Expression '+' Term
                         x += term();
                         t = ts.get();
                         break;
-                case '-':
+                case '-':        // handle Expression '-' Term
                         x -= term();
                         t = ts.get();
                         break;
