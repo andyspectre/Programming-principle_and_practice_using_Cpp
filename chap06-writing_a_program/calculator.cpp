@@ -108,7 +108,7 @@ double primary()
 double term()
 {
         double x =  primary();
-        Token t = ts.get();
+        Token t = ts.get();        // get the next Token from the Token stream
 
         while (true) {
                 switch (t.kind) {
@@ -127,7 +127,7 @@ double term()
                         break;
                 }
                 default:
-                        ts.putback(t);
+                        ts.putback(t);    // put t back into the Token stream
                         return x;
                 }
         }
@@ -137,7 +137,7 @@ double term()
 double expression()
 {
         double x = term();
-        Token t = ts.get();
+        Token t = ts.get();        // get the next Token from the Token stream
 
         while (true) {
                 switch (t.kind) {
@@ -150,7 +150,7 @@ double expression()
                         t = ts.get();
                         break;
                 default:
-                        ts.putback(t);
+                        ts.putback(t);    // put t back into the Token stream
                         return x;
                 }
         }
