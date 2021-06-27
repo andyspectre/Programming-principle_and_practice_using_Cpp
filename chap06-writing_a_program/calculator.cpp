@@ -108,22 +108,51 @@ double primary()
 double term()
 {
         double x =  primary();
-        return x;
+        Token t = ts.get();
+
+        while (true) {
+                switch (t.kind) {
+                case '*':
+                        x *= primary();
+                        t = ts.get();
+                        break;
+                case '/':
+                {
+                        double d = primary();
+                        if (d == 0) {
+                                error("divide by zero");
+                        }
+                        x /= d;
+                        t = ts.get();
+                        break;
+                }
+                default:
+                        ts.putback(t);
+                        return x;
+                }
+        }
+        return 1;
 }
 
 double expression()
 {
         double x = term();
         Token t = ts.get();
-        switch (t.kind) {
-        case '+':
-                x += term();
-                return x;
-        case '-':
-                x -= term();
-                return x;
-        default:
-                return x;
+
+        while (true) {
+                switch (t.kind) {
+                case '+':
+                        x += term();
+                        t = ts.get();
+                        break;
+                case '-':
+                        x -= term();
+                        t = ts.get();
+                        break;
+                default:
+                        ts.putback(t);
+                        return x;
+                }
         }
 }
 
@@ -131,9 +160,19 @@ double expression()
 int main()
 try{
         double val = 0;
-        std::cout << "Expression: ";
-        val = expression();
-        std::cout << val << '\n';
+        while (std::cin) {
+                Token t = ts.get();
+                if (t.kind == 'p') {
+                        std::cout << '=' << val << '\n';
+                }
+                else if (t.kind == 'q') {
+                        break;
+                }
+                else {
+                        ts.putback(t);
+                }
+                val = expression();
+        }
         return 0;
 }
 
