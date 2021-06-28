@@ -31,10 +31,10 @@
 
 #include<iostream>
 
-class Token {    // add something 
+class Token {
 public:
-        char kind;
-        double value;
+        char kind;        // what kind of Token
+        double value;     // for numbers: a value
 };
 
 class Token_stream {    // a "stream" of Tokens
@@ -88,10 +88,9 @@ Token Token_stream::get()
         }
 }
 
-Token_stream ts;       
-// Token t = ts.get();
+Token_stream ts;        // provides get() and putback()      
 
-double expression();
+double expression();    // declaration so that primary() can call expression()
 
 double primary()
 {
