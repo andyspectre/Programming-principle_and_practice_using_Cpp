@@ -93,11 +93,12 @@ double primary()
                                 for (int i = val; i>=2; --i) {
                                         fact = fact*i;
                                 }
-                                return fact;
+                                return fact; 
                         }
-        }
+                }
                 else {
-                        return t.value;
+                        ts.putback(t);
+                        return val;
                 }
         }
         case '(':        // handle '(' Expression ')'
@@ -131,6 +132,27 @@ double term()
 
         while (true) {
                 switch (t.kind) {
+                // case '!':
+                //         // double val = t.value;
+                //         // t = ts.get();
+                //         // if (t.kind == '!') {
+                // {
+                //         // double val = t.value;
+                //         int fact = 1;
+
+                //         if (x < 0) {
+                //                 error("cant find factorial for negative numbers");
+                //         }
+                //         else if (x <= 1) {
+                //                 return fact;
+                //         }
+                //         else {
+                //                 for (int i = x; i>=2; --i) {
+                //                         fact = fact*i;
+                //                 }
+                //                 return fact;
+                //         }
+                // }
                 case '*':
                         x *= primary();        // handle Term '*' Primary
                         t = ts.get();
