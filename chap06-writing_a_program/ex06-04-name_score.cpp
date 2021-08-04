@@ -1,3 +1,15 @@
+// Andrea Cocco 2020 
+// Chapter 6 exercise 4
+// Programming: principles and practice using C++, 2nd edition
+// by Bjarne Stroustrup
+// https://www.stroustrup.com/programming.html
+
+/*
+*      Define a class Name_value that holds a string and a value.
+*      Rework exercise 19 in chapter 4 to use a vector<Name_value>
+*      instead of two vectors.
+*/
+
 #include<iostream>
 #include<vector>
 
