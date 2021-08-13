@@ -73,18 +73,26 @@ bool is_sentence()
 
 int main()
 {
-        cout << "Enter a sentence:\n";
-        
+        cout << "Enter a sentence (type 'q' to quit):\n";
+        char q; 
         // If the grammar rules are met, print "OK" otherwise print "not OK"
         while (cin) {
-                bool sentence = is_sentence();
-                if (sentence) {
-                        cout << "OK" << '\n';
+                cin >> q;
+                if (q == 'q' || q == 'Q') {    // to quit the program
+                        cout << "Goodbye.\n";
+                        break;
                 }
                 else {
-                        cout << "not OK" << '\n';
+                        cin.putback(q);
+                        bool sentence = is_sentence();
+                        if (sentence) {
+                                cout << "OK" << '\n';
+                        }
+                        else {
+                                cout << "not OK" << '\n';
+                        }
+                        cout << "try again\n";
                 }
-                cout << "try again" << '\n';
         }
 }
                         
