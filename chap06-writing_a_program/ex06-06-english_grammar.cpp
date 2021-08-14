@@ -89,12 +89,42 @@ int main()
                                 cout << "OK" << '\n';
                         }
                         else {
+                                // if the sentence is "false" e.g. there is
+                                // something wrong with the grammar
+                                // or with the vocabulary, print "not OK"
+                                // ignore bad input so that we get only one
+                                // "not OK" message
+                                cin.ignore(256,'\n');
                                 cout << "not OK" << '\n';
                         }
                         cout << "try again\n";
                 }
         }
 }
+
+/*
+ *      "We must always make sure that such relatively thoughtless and
+ *      unplanned 'coding' doesn't steal too much time." Bjarne at page 186.
+ *
+ *      I feel I spent way too much time with this exercise. Something around 
+ *      two days. The main part wasn't much of a problem, also because Bjarne 
+ *      gave us his solution from which of course I took inspiration.
+ *      The thing is that every time the is_sentence() function returned false,
+ *      it kept printing "not OK" and I wanted to fix that. 
+ *      For example if I were to input "snake fly ." I would have gotten 
+ *      three "not OK". That is because after is_noun() returns false the first 
+ *      time, we return and then call is_sentence() again which in turn
+ *      calls is_noun() (again) using "fly" as input, and then same thing with 
+ *      the "." resulting in three "not OK". 
+ *      I found the solution in cin.ignore() which I am not even sure it was
+ *      explained in the book up until this chapter. I love C++, this book and
+ *      all Bjarne's work, he is a true inspiration. I sometimes whish 
+ *      that the book was more straightforward with regards to C++ facilities
+ *      and less prone to hide implementation details, like it does with the
+ *      custom header file that uses up until chapter 8/9 or so. Nevertheless 
+ *      we must keep in mind that it is not a "quickreference guide" on C++, 
+ *      rather is a scientific introduction to programming in general.
+*/
                         
 
 
