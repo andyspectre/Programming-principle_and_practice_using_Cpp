@@ -18,6 +18,7 @@ using std::cout;
 using std::cin;
 using std::vector;
 using std::string;
+using std::cerr;
 
 
 // Initialize a "vocabulary" of nouns, verbs and conjunctions
@@ -72,7 +73,7 @@ bool is_sentence()
 }
 
 int main()
-{
+try{
         cout << "Enter a sentence (type 'q' to quit):\n";
         char q; 
         // If the grammar rules are met, print "OK" otherwise print "not OK"
@@ -100,6 +101,13 @@ int main()
                         cout << "try again\n";
                 }
         }
+        return 0;
+}
+
+// exception handler to handle exceptions of any type
+catch (...) {
+        cerr << "Unknown exception!\n";
+        return 1;
 }
 
 /*
