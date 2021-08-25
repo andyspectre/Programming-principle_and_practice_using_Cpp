@@ -23,9 +23,10 @@ int main()
         constexpr char c {'0'};    // need this to convert char to int properly
         int x {0};
         
-        cin >> n;
-        x = n-c;    // subtract '0' to char for correct conversion to int
-        
-        cout << x << '\n';
+        // input char and output int until quit with 'q'
+        while (cin >> n && n != 'q') {
+                x = n-c;    // subtract '0' to char for correct conversion to int
+                cout << x << '\n';
+        }
 }
         
