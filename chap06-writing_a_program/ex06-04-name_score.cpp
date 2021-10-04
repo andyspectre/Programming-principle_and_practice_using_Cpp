@@ -40,6 +40,7 @@ try{
 
         cout << "Enter some names and values:\n";
 
+        // to terminate, enter "noname 0"
         while (cin>>n>>v && n!="noname") {
                 for (int i=0; i<nameVal.size(); ++i) {
                         if (n==nameVal[i].name) {
