@@ -5,11 +5,11 @@
 // https://www.stroustrup.com/programming.html
 
 /*
- *      Write a program that reads digits and composes them into integers.
+ *      Write a program that reads digit and composes them into integers.
  *      For example, 123 is read as the characters 1, 2 and 3. The program
  *      should output 123 is 1 hundred and 2 tens and 3 ones. The number
  *      should be output as an int value. Handle numbers with one, two, three
- *      or four digits.
+ *      or four digit.
 */
 
 #include<iostream>
@@ -27,24 +27,33 @@ void error(string s) {
 }
 
 int main()
-try{
-        char n {' '};
-        constexpr char c {'0'};    // need this to convert char to int properly
-        int x {0};
-        vector<int> digits;
-        vector<string> units {"ones", "tens", "hundreds", "thousands"};
-
-        // input char and output int until quit with 'q'
-        while (cin >> n && n != 'q') {
-                // input validation
-                if ((n < 'q' && n < '0') || (n > '9')) error("invalid input");
-                x = n-c;    // subtract '0' to char for correct conversion to int
-                digits.push_back(x);
+try
+{
+        vector<int> digit;
+        vector<string> unit = {" ones ", " tens ", " hundreds ", " thousands "};
+        cout <<  "Enter an integer witn no more than " << unit.size()
+                << "\ndigit followed by semicolon and a newline: ";
+        char ch;
+        while (cin >> ch) {
+                if (ch < '0' || '9' < ch) break;
+                digit.push_back(ch - '0');
         }
-        // scaffolding
-        for (int i : digits)
-                cout << i;
-                cout << '\n';
+        if (digit.size() == 0) error("no digits");
+        if (unit.size() < digit.size()) error("Cannot handle that many digits");
+
+        for (int i = 0; i < digit.size(); ++i) {
+                cout << char('0' + digit[i]);
+        }
+        cout << '\n';
+
+        int num = 0;
+        for (int i = 0; i < digit.size(); ++i) {
+                if (digit[i]) {
+                        cout << digit[i] << unit[digit.size()-i-1];
+                }
+                num = num*10+digit[i];
+        }
+        cout << "\nthat is " << num << '\n';
 }
 catch(runtime_error e) {
         cerr << e.what() << '\n';
